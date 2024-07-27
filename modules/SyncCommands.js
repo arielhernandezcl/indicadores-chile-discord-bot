@@ -56,7 +56,6 @@ module.exports = async (client, commands, options = { debug: false, guildId: nul
   }
 
   log(`Updated ${updatedCommandCount} commands!`)
-
   log(`Commands synchronized!`)
 
   return {
