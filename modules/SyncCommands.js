@@ -24,12 +24,13 @@ module.exports = async (client, commands, options = { debug: false, guildId: nul
 
   const deletedCommands = currentCommands
     .filter((command) => !commands.some((c) => c.name === command.name))
-    .toJSON()
+    .toJSON();
+
   for (const deletedCommand of deletedCommands) {
-    await deletedCommand.delete()
+    await deletedCommand.delete();
   }
 
-  log(`Deleted ${deletedCommands.length} commands!`)
+  log(`Deleted ${deletedCommands.length} commands!`);
 
   const updatedCommands = commands.filter((command) =>
     currentCommands.some((c) => c.name === command.name)
