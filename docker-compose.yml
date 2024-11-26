@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    image: arielhernandezcl/discord-indicadores
+    build: .
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+    networks:
+      - discord
+
+networks:
+  discord:
+    driver: bridge
